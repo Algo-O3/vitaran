@@ -1,0 +1,52 @@
+{
+  "user": [
+    {
+      "name": "Raghav",
+      "email": "raghavt@gmail.com",
+      "phoneno": "08845440649",
+      "address": "17 b, tulsi nagar, Dadar",
+      "password": "qwert123",
+      "id": 1
+    },
+    {
+      "name": "Rohit",
+      "email": "rohitmehera@gmail.com",
+      "phoneno": "8811225570",
+      "address": "55a, Jadoo Complex, Bhilai",
+      "password": "rohit12345",
+      "id": 2
+    },
+    {
+      "name": "Puja",
+      "email": "pujanotpooja@gmail.com",
+      "phoneno": "1234569870",
+      "address": "12, ram nagar, Delhi",
+      "password": "helloworld123",
+      "id": 3
+    },
+    {
+      "name": "radhika",
+      "email": "radhika123@gmail.com",
+      "phoneno": "1122334401",
+      "address": "radhakrishna",
+      "password": "abcd",
+      "id": 5
+    },
+    {
+      "name": "xyz",
+      "email": "xyz@xyz.com",
+      "phoneno": "123",
+      "address": "xyz",
+      "password": "xyz",
+      "id": 6
+    },
+    {
+      "name": "Geeta",
+      "email": "geeta@gmail.com",
+      "phoneno": "0000000000",
+      "address": "sita nagar, varali",
+      "password": "geeta",
+      "id": 7
+    }
+  ]
+}

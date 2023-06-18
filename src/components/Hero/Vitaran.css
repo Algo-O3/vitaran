@@ -1,0 +1,128 @@
+.bg{
+    background-image: url("logistic-1.jpg");
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.text-container{
+    height: inherit;
+    padding-top:30vh ;
+    color: aliceblue;
+    text-align: center;
+}
+
+
+.container{
+    height: 30vw;
+    text-align: center;
+}
+
+.heading{
+    font-size: 5vw;
+}
+.txt{
+    font-size:2.5vw
+}
+
+.card-img-top{
+    height: 25vw;
+}
+
+.cards-container{
+    height: 40vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2vw;
+    background-color: #333;
+    margin-top: 2vw;
+}
+
+.col{
+    padding-top: 3.5vw;
+    width: 32vw;
+}
+
+.card-body{
+    background-color: rgba(231, 200, 107, 0.153);
+    height: 5vw;
+}
+
+.card-text{
+    font-size:1.05vw;
+}
+
+.ftr{
+    position: relative;
+    bottom: 0;
+}
+
+  
+  @media only screen and (max-width: 900px) {
+    .card-text{
+        font-size:0.85vw;
+    }
+  }
+
+  @media only screen and (max-width:512px) {
+    .mask{
+        background-color: rgba(0, 0, 0, 0.324);
+        height: 85vh;
+    }
+    
+     #tag-line{
+        font-size:100%;
+        display: block;
+    }
+    
+    #wlc{
+        font-size: 200%;
+    }
+    
+  }
+
+  @media only screen and (max-width:388px) {
+    .mask{
+        background-color: rgba(0, 0, 0, 0.324);
+        height: 85vh;
+    }
+    
+     #tag-line{
+        font-size:75%;
+        display: block;
+    }
+    
+    #wlc{
+        font-size: 175%;
+    }
+    
+  }
+
+  @media only screen and (min-width:512px) {
+    .mask{
+        transition: all 0.75s;
+        height: 80vh;
+    }
+    .mask:hover{
+        background-color: rgba(0, 0, 0, 0.324);
+        height: 85vh;
+    }
+    #wlc{
+        transition: all 0.70s;
+    }
+    
+    .text-container:hover #wlc{
+        font-size: 300%;
+    }
+    
+    #tag-line{
+        transition: all 0.70s;
+        display: none;
+    }
+    
+    .text-container:hover #tag-line{
+        font-size:125%;
+        display: block;
+    }
+  }
