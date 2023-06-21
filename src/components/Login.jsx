@@ -43,27 +43,34 @@ const [alert,setAlert] = useState(alertVal);
 
 const navigate = useNavigate();
 
-let found=false;
-
 const onValuechange = (e)=>{
 getUser( {...user_detail,[e.target.name]:e.target.value});
 }
 
+
 const logIn = async ()=>{
   try{
   const response = await getUsers();
-  const userData = response.data;
+  const responseData = response; 
 
-  for(const val of userData)
-{
-    if((val.email === user_detail.email) && val.password === user_detail.password)
-    {
-      found=true;
-      handelLogin(true);
+  let userFound = false;
+  for (const val of Object.values(responseData)) {
+    if (val.email === user_detail.email && val.password === user_detail.password) {
+      userFound = true;
       break;
     }
-}
-if (found){
+  }
+
+
+  /*const userFound = responseData.some((user) => {
+    return user.email === user_detail.email && user.password === user_detail.password;
+  });*/
+
+    if(userFound)
+    {
+      handelLogin(true);
+    }
+if (userFound){
   navigate('/all')
 }
 

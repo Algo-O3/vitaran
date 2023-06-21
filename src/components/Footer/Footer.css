@@ -19,6 +19,7 @@
   .footer-col {
     width: 30%;
     margin-bottom: 20px;
+    padding-right: .5vw;
   }
   
   .footer-col h4 {

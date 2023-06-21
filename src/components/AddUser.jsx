@@ -24,7 +24,7 @@ margin: 5% auto 0 auto;
 `
 
 const initialValues ={
-  name:'',
+  Name:'',
   email:'',
   phoneno:'',
   address:'',
@@ -52,7 +52,7 @@ const addUserDetail= async ()=>{
         <Typography>Add user details</Typography>
         <FormControl>
             <InputLabel>Name</InputLabel>
-            <Input onChange ={(e)=> onValuechange(e)} name='name' />  
+            <Input onChange ={(e)=> onValuechange(e)} name='Name' />  
         </FormControl> 
             <FormControl>   
             <InputLabel>E-Mail</InputLabel>

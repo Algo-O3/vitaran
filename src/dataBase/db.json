@@ -47,6 +47,22 @@
       "address": "sita nagar, varali",
       "password": "geeta",
       "id": 7
+    },
+    {
+      "name": "abc",
+      "email": "abc",
+      "phoneno": "1111",
+      "address": "abc",
+      "password": "abc",
+      "id": 8
+    },
+    {
+      "name": "Ram",
+      "email": "ram@email.com",
+      "phoneno": "1234567890",
+      "address": "Finland",
+      "password": "sitamatkijay",
+      "id": 9
     }
   ]
 }

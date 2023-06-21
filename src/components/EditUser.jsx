@@ -1,7 +1,7 @@
 import { FormGroup, FormControl, InputLabel, Input, Typography, Button, styled } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import {useNavigate, useParams} from 'react-router-dom'
-import { get_User, edit_User } from '../service/api';
+import { get_User, edit_User, getFirebaseKeys } from '../service/api';
 
 const Form_Container = styled(FormGroup)`
 width: 50%;
@@ -24,7 +24,7 @@ margin: 5% auto 0 auto;
 }
 `
 const initialValues ={
-  name:'',
+  Name:'',
   email:'',
   phoneno:'',
   address:''
@@ -33,29 +33,45 @@ const initialValues ={
 export default function EditUser() {
 
 const {id} =useParams();
-    
 const [user, set_user] = useState(initialValues);
 
 const navigate = useNavigate();
+  
+useEffect(() => {
+  getFirebaseKeys()
+    .then(keys => {
+      const Key = keys[id];
+      return getUserData(Key);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}, [id]);
 
-useEffect(()=>{
-   getUserData();
-},[])
-
-const getUserData =async()=>{
-    let responce = await get_User(id);
-    set_user(responce.data);
+const getUserData = async (userKey) => {
+  try {
+    const response = await get_User(userKey);
+    set_user(response);
+  } catch (error) {
+    console.log('Error while fetching user data', error.message);
   }
+};
 
 const onValuechange = (e)=>{
    set_user({...user,[e.target.name] : e.target.value}) // we write ...user so that previous value will be as it is and it wont be overwrite by new ones.
 }// Note that if we want to use e.target.name (which is variable) as a key we must keep it in [] braces 
 
 
-const editUserDetail= async ()=>{
- await edit_User(user,id);
- navigate('/all');
-}
+const editUserDetail = async () => {
+  await getFirebaseKeys()
+  .then(keys => {
+    const Key = keys[id];
+    edit_User(user, Key);
+    console.log(Key);
+    return getUserData(Key);
+  })
+  navigate('/all');
+};
 
   return (
     <div>
@@ -63,7 +79,7 @@ const editUserDetail= async ()=>{
         <Typography>Edit user details</Typography>
         <FormControl>
             <InputLabel>Name</InputLabel>
-            <Input onChange ={(e)=> onValuechange(e)} name='name' value={user.name}/>  
+            <Input onChange ={(e)=> onValuechange(e)} name='Name' value={user.Name}/>  
         </FormControl> 
             <FormControl>   
             <InputLabel>E-Mail</InputLabel>
