@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL="https://vitaran-prj-001-default-rtdb.firebaseio.com/userData";
+const API_URL=process.env.API_URL;
 
 
 export const getFirebaseKeys =async()=>{
